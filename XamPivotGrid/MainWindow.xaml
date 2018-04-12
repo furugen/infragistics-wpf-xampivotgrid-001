@@ -1,0 +1,30 @@
+﻿<Window xmlns:igWPF="http://schemas.infragistics.com/xaml/wpf"  xmlns:ig="http://schemas.infragistics.com/xaml"  x:Class="XamPivotGrid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XamPivotGrid"
+        mc:Ignorable="d"
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <igWPF:XamDataGrid x:Name="xamDataGrid" Height="400" MaxHeight="400" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <igWPF:XamDataGrid.FieldSettings>
+                <igWPF:FieldSettings AllowRecordFiltering="true" />
+            </igWPF:XamDataGrid.FieldSettings>
+        </igWPF:XamDataGrid>
+        <ig:XamPivotGrid x:Name="xamPivot" Grid.Row="1" Grid.Column="0"/>
+        <ig:Expander Grid.Row="1" Grid.Column="1">
+            <ig:XamPivotDataSelector x:Name="xamPivotDataSelector" />
+        </ig:Expander>
+    </Grid>
+</Window>
